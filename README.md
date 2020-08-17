@@ -14,7 +14,7 @@ I designed the model structure to fit as much as possible to the blocks in the a
 ```python
 from transformer import SpeechTransformer
 
-model = SpeechTransformer(num_classes, d_model=512, num_heads=8, input_dim=80, extractor='vgg', dropout_p=0.3)
+model = SpeechTransformer(num_classes, d_model=512, num_heads=8, input_dim=80, extractor='vgg')
 output = model(inputs, input_lengths, targets, return_attns=False)
 ```
   
