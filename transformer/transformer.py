@@ -143,16 +143,13 @@ class SpeechTransformer(nn.Module):
         self.pad_id = pad_id
         self.generator = Linear(d_model, num_classes)
 
-    def forward(self, inputs: Tensor, input_lengths: Tensor,
-                targets: Optional[Tensor] = None,
-                return_attns: bool = False):
-        """
-        Args:
-            inputs: B x T_input x D_Feature
-            input_lengths: B
-            targets: B x T_output => <sos> a b c d e . . . <eos> <pad> <pad> <pad>
-            return_attns: bool
-        """
+    def forward(
+            self,
+            inputs: Tensor,                     # B x T_input x D_Feature
+            input_lengths: Tensor,              # B
+            targets: Optional[Tensor] = None,   # B x T_output => <sos> a b c d e . . . <eos> <pad> <pad> <pad>
+            return_attns: bool = False          # bool
+    ):
         conv_feat = self.conv(inputs.unsqueeze(1))
         conv_feat = conv_feat.transpose(1, 2)
 
