@@ -3,7 +3,7 @@ PyTorch implementation of Speech Transformer, CNN Extractor (ds2 / vgg) + Transf
 I implemented this repo by referring to several repositories.  
 I appreciate any kind of [feedback or contribution](https://github.com/sooftware/Speech-Transformer/issues)  
   
-<img src="https://user-images.githubusercontent.com/42150335/90433479-d81c2d00-e106-11ea-80b6-e2041148dc1f.png" width=500>
+<img src="https://user-images.githubusercontent.com/42150335/90434869-17e41400-e109-11ea-9738-9a4a53f884c7.png" width=500>
   
 This repository focused on implementing transomers that are specialized in speech recognition.  
 while at the same time striving for a readable code. To improve readability,  
