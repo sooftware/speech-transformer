@@ -20,3 +20,8 @@ I designed the model structure to fit as much as possible to the blocks in the a
 * [nlp-tutorial](https://github.com/graykode/nlp-tutorial)
 * [transformer-pytorch](https://github.com/dreamgonfly/transformer-pytorch)
 * [attention-is-all-you-need-pytorch](https://github.com/jadore801120/attention-is-all-you-need-pytorch)
+  
+## Author
+  
+* Soohwan Kim [@sooftware](https://github.com/sooftware)
+* Contacts: sh951011@gmail.com
