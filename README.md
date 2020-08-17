@@ -1,5 +1,6 @@
 # Speech-Transformer
 PyTorch implementation of Speech Transformer, CNN Extractor (ds2 / vgg) + Transformer.    
+I implemented this repo by referring to several repositories.  
 I appreciate any kind of [feedback or contribution](https://github.com/sooftware/Speech-Transformer/issues)  
   
 <img src="https://user-images.githubusercontent.com/42150335/90433479-d81c2d00-e106-11ea-80b6-e2041148dc1f.png" width=500>
