@@ -1,5 +1,6 @@
 # Speech-Transformer
-PyTorch implementation of Speech Transformer, CNN Extractor (ds2 / vgg) + Transformer.    
+  
+`Speech Transformer` is a transformer framework specialized in speech recognition tasks.  
 I implemented this repo by referring to several repositories.  
 I appreciate any kind of [feedback or contribution](https://github.com/sooftware/Speech-Transformer/issues)  
   
