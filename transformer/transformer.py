@@ -149,8 +149,8 @@ class SpeechTransformer(nn.Module):
         """
         Args:
             inputs: B x T_input x D_Feature
-            input_lengths: B x 1
-            targets: B x T_output
+            input_lengths: B
+            targets: B x T_output => <sos> a b c d e . . . <eos> <pad> <pad> <pad>
             return_attns: bool
         """
         conv_feat = self.conv(inputs.unsqueeze(1))
@@ -279,7 +279,6 @@ class SpeechTransformerDecoder(nn.Module):
     def forward(self, inputs: Tensor, input_lengths: Optional[Any] = None, memory: Tensor = None):
         self_attns, memory_attns = list(), list()
         batch_size, output_length = inputs.size(0), inputs.size(1)
-        # inputs = inputs[inputs != self.eos_id].view(batch_size, -1)
 
         non_pad_mask = get_pad_mask(inputs, pad_id=self.pad_id).eq(False)
         self_attn_mask = get_decoder_self_attn_mask(inputs, inputs, self.pad_id)
