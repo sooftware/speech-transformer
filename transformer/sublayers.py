@@ -129,8 +129,8 @@ class MultiHeadAttention(nn.Module):
         - **value** (batch, v_len, d_model): tensor containing features of the encoded input sequence.
         - **mask** (-): tensor containing indices to be masked
 
-    Returns: output, attn
-        - **output** (batch, output_len, dimensions): tensor containing the attended output features.
+    Returns: context, attn
+        - **context** (batch, output_len, dimensions): tensor containing context vector.
         - **attn** (batch * num_heads, v_len): tensor containing the attention (alignment) from the encoder outputs.
     """
     def __init__(self, d_model: int = 512, num_heads: int = 8) -> None:
