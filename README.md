@@ -18,7 +18,7 @@ model = SpeechTransformer(num_classes, d_model=512, num_heads=8, input_dim=80, e
 output = model(inputs, input_lengths, targets, return_attns=False)
 ```
   
-### Install
+## Prerequisites
   
 * Numpy: `pip install numpy` (Refer [here](https://github.com/numpy/numpy) for problem installing Numpy).
 * Pytorch: Refer to [PyTorch website](http://pytorch.org/) to install the version w.r.t. your environment.   
