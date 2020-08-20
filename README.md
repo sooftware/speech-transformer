@@ -10,6 +10,14 @@ This repository focused on implementing transomers that are specialized in speec
 while at the same time striving for a readable code. To improve readability,  
 I designed the model structure to fit as much as possible to the blocks in the above Transformers figure.  
   
+## Usage
+```python
+from transformer import SpeechTransformer
+
+model = SpeechTransformer(num_classes, d_model=512, num_heads=8, input_dim=80, extractor='vgg')
+output = model(inputs, input_lengths, targets, return_attns=False)
+```
+  
 ### Install
   
 * Numpy: `pip install numpy` (Refer [here](https://github.com/numpy/numpy) for problem installing Numpy).
