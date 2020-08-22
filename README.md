@@ -6,8 +6,8 @@ I appreciate any kind of [feedback or contribution](https://github.com/sooftware
   
 <img src="https://user-images.githubusercontent.com/42150335/90434869-17e41400-e109-11ea-9738-9a4a53f884c7.png" width=500>
   
-This repository focused on implementing transomers that are specialized in speech recognition.  
-while at the same time striving for a readable code. To improve readability,  
+This repository focused on implementing transformers that are specialized in speech recognition.  
+While at the same time striving for a readable code. To improve readability,  
 I designed the model structure to fit as much as possible to the blocks in the above Transformers figure.  
   
 ## Usage
