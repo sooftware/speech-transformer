@@ -44,11 +44,7 @@ class SpeechTransformerEncoderLayer(nn.Module):
             self_attn_mask: Optional[Any] = None        # B x T_input x T_output
     ) -> Tuple[Tensor, Tensor]:
         output, attn = self.self_attention(inputs, inputs, inputs, self_attn_mask)
-        output *= non_pad_mask
-
         output = self.feed_forward(output)
-        output *= non_pad_mask
-
         return output, attn
 
 
@@ -87,12 +83,6 @@ class SpeechTransformerDecoderLayer(nn.Module):
             memory_mask: Optional[Any] = None               # B x T_input x T_output
     ) -> Tuple[Tensor, Tensor, Tensor]:
         output, self_attn = self.self_attention(inputs, inputs, inputs, self_attn_mask)
-        output *= non_pad_mask
-
         output, memory_attn = self.memory_attention(output, memory, memory, memory_mask)
-        output *= non_pad_mask
-
         output = self.feed_forward(output)
-        output *= non_pad_mask
-
         return output, self_attn, memory_attn
