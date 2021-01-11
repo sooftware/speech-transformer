@@ -1,14 +1,24 @@
+# Copyright (c) 2020, Soohwan Kim. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import torch.nn as nn
 from torch import Tensor
-from typing import (
-    Tuple,
-    Optional,
-    Any
-)
-from transformer.sublayers import (
+from typing import Tuple, Optional, Any
+from speech_transformer.attention import MultiHeadAttention
+from speech_transformer.sublayers import (
     PositionWiseFeedForwardNet,
     AddNorm,
-    MultiHeadAttention
 )
 
 
@@ -37,12 +47,7 @@ class SpeechTransformerEncoderLayer(nn.Module):
         self.self_attention = AddNorm(MultiHeadAttention(d_model, num_heads), d_model)
         self.feed_forward = AddNorm(PositionWiseFeedForwardNet(d_model, d_ff, dropout_p, ffnet_style), d_model)
 
-    def forward(
-            self,
-            inputs: Tensor,                             # B x T_input x D
-            non_pad_mask: Optional[Any] = None,         # B x T_input
-            self_attn_mask: Optional[Any] = None        # B x T_input x T_output
-    ) -> Tuple[Tensor, Tensor]:
+    def forward(self, inputs: Tensor, self_attn_mask: Optional[Any] = None) -> Tuple[Tensor, Tensor]:
         output, attn = self.self_attention(inputs, inputs, inputs, self_attn_mask)
         output = self.feed_forward(output)
         return output, attn
@@ -76,11 +81,10 @@ class SpeechTransformerDecoderLayer(nn.Module):
 
     def forward(
             self,
-            inputs: Tensor,                                 # B x T_input
-            memory: Tensor,                                 # B x T_input x D_model
-            non_pad_mask: Optional[Any] = None,             # B x T_input
-            self_attn_mask: Optional[Any] = None,           # B x T_input x T_input
-            memory_mask: Optional[Any] = None               # B x T_input x T_output
+            inputs: Tensor,                                 # tensor contains target sequence
+            memory: Tensor,                                 # tensor contains encoder outputs
+            self_attn_mask: Optional[Any] = None,           # tensor contains mask of self attention
+            memory_mask: Optional[Any] = None               # tensor contains mask of encoder outputs
     ) -> Tuple[Tensor, Tensor, Tensor]:
         output, self_attn = self.self_attention(inputs, inputs, inputs, self_attn_mask)
         output, memory_attn = self.memory_attention(output, memory, memory, memory_mask)
