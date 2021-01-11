@@ -1,6 +1,6 @@
 # Speech-Transformer
   
-PyTorch implementation of [The SpeechTransformer for Large-scale Mandarin Chinese Speech Recognition (Yuanyuan Zhao et al, 2019)](https://ieeexplore.ieee.org/document/8682586).
+PyTorch implementation of [The SpeechTransformer for Large-scale Mandarin Chinese Speech Recognition](https://ieeexplore.ieee.org/document/8682586).
     
 <img src="https://user-images.githubusercontent.com/42150335/90434869-17e41400-e109-11ea-9738-9a4a53f884c7.png" width=500>
   
@@ -36,7 +36,7 @@ I appreciate any kind of feedback or contribution.  Feel free to proceed with sm
 I follow [PEP-8](https://www.python.org/dev/peps/pep-0008/) for code style. Especially the style of docstrings is important to generate documentation.  
   
 ## Reference
-- The SpeechTransformer for Large-scale Mandarin Chinese Speech Recognition (Yuanyuan Zhao et al, 2019)](https://ieeexplore.ieee.org/document/8682586)  
+- [The SpeechTransformer for Large-scale Mandarin Chinese Speech Recognition (Yuanyuan Zhao et al, 2019)](https://ieeexplore.ieee.org/document/8682586)  
 - [kaituoxu/Speech-Transformer](https://github.com/kaituoxu/Speech-Transformer)
   
 ## Author
