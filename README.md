@@ -5,7 +5,7 @@ PyTorch implementation of [The SpeechTransformer for Large-scale Mandarin Chines
 <img src="https://user-images.githubusercontent.com/42150335/90434869-17e41400-e109-11ea-9738-9a4a53f884c7.png" width=500>
   
 Speech Transformer is a transformer framework specialized in speech recognition tasks.  
-This repository contains only model code, but you can train with speech transformer with this [repository](https://github.com/sooftware/KoSpeech).
+This repository contains only model code, but you can train with speech transformer with this [repository](https://github.com/sooftware/KoSpeech).  
 I appreciate any kind of [feedback or contribution](https://github.com/sooftware/Speech-Transformer/issues)  
     
 ## Usage
