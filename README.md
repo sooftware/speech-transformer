@@ -43,6 +43,7 @@ inputs = torch.rand(BATCH_SIZE, SEQ_LENGTH, DIM).to(device)  # BxTxD
 input_lengths = torch.LongTensor([SEQ_LENGTH, SEQ_LENGTH - 10, SEQ_LENGTH - 20]).to(device)
 
 model = SpeechTransformer(num_classes=NUM_CLASSES, d_model=512, num_heads=8, input_dim=DIM)
+model.set_beam_decoder(batch_size=BATCH_SIZE, beam_size=3)
 predictions, _ = model(inputs, input_lengths)
 ```
   
