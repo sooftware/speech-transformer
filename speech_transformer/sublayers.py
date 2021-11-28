@@ -18,7 +18,6 @@ from torch import Tensor
 from typing import Any, Optional
 from speech_transformer.modules import (
     Linear,
-    LayerNorm,
     MaskConv2d,
 )
 
@@ -32,7 +31,7 @@ class AddNorm(nn.Module):
     def __init__(self, sublayer: nn.Module, d_model: int = 512) -> None:
         super(AddNorm, self).__init__()
         self.sublayer = sublayer
-        self.layer_norm = LayerNorm(d_model)
+        self.layer_norm = nn.LayerNorm(d_model)
 
     def forward(self, *args):
         residual = args[0]
