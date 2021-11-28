@@ -21,7 +21,7 @@ from typing import Optional, Any, Tuple
 from speech_transformer.attention import MultiHeadAttention
 from speech_transformer.embeddings import Embedding, PositionalEncoding
 from speech_transformer.mask import get_attn_pad_mask, get_attn_subsequent_mask
-from speech_transformer.modules import LayerNorm, Linear
+from speech_transformer.modules import Linear
 from speech_transformer.sublayers import AddNorm, PositionWiseFeedForwardNet
 
 
@@ -109,7 +109,7 @@ class SpeechTransformerDecoder(nn.Module):
         self.sos_id = sos_id
         self.eos_id = eos_id
         self.fc = nn.Sequential(
-            LayerNorm(d_model),
+            nn.LayerNorm(d_model),
             Linear(d_model, num_classes, bias=False),
         )
 
