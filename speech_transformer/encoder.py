@@ -20,7 +20,7 @@ from speech_transformer.attention import MultiHeadAttention
 from speech_transformer.convolution import VGGExtractor
 from speech_transformer.embeddings import PositionalEncoding
 from speech_transformer.mask import get_attn_pad_mask
-from speech_transformer.modules import Linear, LayerNorm
+from speech_transformer.modules import Linear
 from speech_transformer.sublayers import AddNorm, PositionWiseFeedForwardNet
 
 
